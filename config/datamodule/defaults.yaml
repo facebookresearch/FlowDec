@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+_target_: flowdec.data.data_module.PairedAudioDataModule
+sampling_rate: ${sampling_rate}  # see global config for why we interpolate it here
+batch_size: 8
+target_duration: 2  # seconds
+num_workers: 10
+pin_memory: True
+prepare_data_per_node: False  # not needed

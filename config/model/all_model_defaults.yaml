@@ -1,0 +1,15 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+defaults:
+  - eval_variants: euler_1_2_3_5_10_full50
+  - eval_metrics: all_speech
+  - _self_
+
+sampling_rate: ${sampling_rate}  # see global config for why we interpolate it here
+num_eval_files: 20
+normalize_mode: noisy
+

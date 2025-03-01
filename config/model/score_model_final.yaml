@@ -1,0 +1,20 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# This is a score_model config aligned with flow_model_final, hence the name
+
+defaults:
+  - all_model_defaults
+  - backbone: ncsnpp_final_no_attn
+  - feature_extractor: compressed_complex_stft_final
+  - sde: ouve_final
+  - override eval_variants: score_model_N3_full30
+  - override eval_metrics: sisxr_logspec_mse
+  - _self_
+
+_target_: flowdec.model.ScoreModel
+lr: 1e-4
+t_eps: 3e-2  # kept from SGMSE+/ScoreDec settings

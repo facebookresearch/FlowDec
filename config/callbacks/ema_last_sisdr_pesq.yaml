@@ -1,0 +1,29 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+- _target_: flowdec.callbacks.ema.EMA
+  decay: 0.999
+  apply_ema_every_n_steps: 1
+  start_step: 0
+  evaluate_with_ema_weights: True
+- _target_: flowdec.callbacks.ema.EMAModelCheckpoint
+  dirpath: ${dirs.checkpoint_dir}
+  save_last: False  # "Can be set to 'link' on a local filesystem to create a symbolic link."
+  filename: '{epoch}-last'
+- _target_: flowdec.callbacks.ema.EMAModelCheckpoint
+  dirpath: ${dirs.checkpoint_dir}
+  save_top_k: 1
+  mode: max
+  monitor: sisdr
+  filename: '{epoch}-{sisdr:.2f}'
+  every_n_epochs: ${full_eval_every_n_epochs}
+- _target_: flowdec.callbacks.ema.EMAModelCheckpoint
+  dirpath: ${dirs.checkpoint_dir}
+  save_top_k: 1
+  mode: max
+  monitor: pesq
+  filename: '{epoch}-{pesq:.2f}'
+  every_n_epochs: ${full_eval_every_n_epochs}

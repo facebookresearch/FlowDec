@@ -1,0 +1,12 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Default parameterization from SGMSE/SGMSE+, we can improve this probably
+_target_: flowdec.sdes.OUVESDE
+theta: 1.5
+sigma_min: 0.05
+sigma_max: 0.5
+N: 30

@@ -1,0 +1,15 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+defaults:
+  - defaults
+  - _self_
+
+mode: paired_filelist
+pairs_delim: ','
+train_x: dummy_paired_filelist.txt
+valid_x: dummy_paired_filelist.txt
+test_x: dummy_paired_filelist.txt

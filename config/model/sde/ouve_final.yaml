@@ -1,0 +1,16 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# Aligned ScoreDec parameterization with flow_model_final, for use as a baseline
+_target_: flowdec.sdes.OUVESDE
+theta: 1.5  # kept from SGMSE+/ScoreDec settings
+sigma_min: 0.05  # kept from SGMSE+/ScoreDec settings
+# via approximately solving Eq. (10) in SGMSE+ for sigma_max targeting
+#   sqrt(sigma(1)^2) == 0.66
+# while keeping theta and sigma_min the same as above.
+# Doing this aligns this model with flow_model_final in terms of maximum noise added.
+sigma_max: 0.82
+N: 30

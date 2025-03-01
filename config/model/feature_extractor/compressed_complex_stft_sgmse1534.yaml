@@ -1,0 +1,13 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+_target_: flowdec.data.feature_extractors.AmplitudeCompressedComplexSTFT
+n_fft: 1534
+n_hops: 4
+window_fn: hann
+sampling_rate: ${sampling_rate}  # passed mainly for informative logging
+alpha: 0.5
+beta: 0.15

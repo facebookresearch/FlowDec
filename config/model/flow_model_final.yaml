@@ -1,0 +1,21 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+defaults:
+  - all_model_defaults
+  - backbone: ncsnpp_final_no_attn
+  - feature_extractor: compressed_complex_stft_final
+  - override eval_variants: 20k_steps_midpoint_6_25
+  - override eval_metrics: sisxr_logspec_mse
+  - _self_
+
+_target_: flowdec.model.FlowModel
+lr: 1e-4
+sigma_x: 0.0
+sigma_y: 0.66
+flow_matcher:
+  _target_: torchcfm.ConditionalFlowMatcher
+  sigma: 0.0

@@ -1,0 +1,23 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+defaults:
+  - global_defaults
+  - model: flow_model_final
+  - datamodule: example  # TODO override
+  - _self_
+
+model:
+  lr: 1e-4
+  feature_extractor:
+    alpha: 0.5
+    beta: 0.16
+  sigma_y:
+    _target_: flowdec.data.sigma_models.from_file
+    filename: MISSING  # currently don't have this one lying around
+    factor: 1  # implicit factor in file is 1/3, in accordance with global sigma_y
+    kernel_bandwidth: 3  # smooth the curve
+sampling_rate: 48000

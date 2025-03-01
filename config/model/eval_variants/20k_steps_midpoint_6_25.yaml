@@ -1,0 +1,19 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+# NOTE: All midpoint entries have half the 'N' that they are named with.
+# This is intentional, for comparability to Euler runs, since we care about NFE at the end of the day
+# and midpoint has NFE=2*N
+- name: N6_mp
+  every_n_steps: 20000
+  enhance_kwargs:
+    N: 3
+    solver: midpoint
+- name: !!null  # no suffix in log
+  every_n_steps: 20000
+  enhance_kwargs:
+    N: 25
+    solver: midpoint

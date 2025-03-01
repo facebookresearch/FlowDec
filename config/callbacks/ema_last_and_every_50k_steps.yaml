@@ -1,0 +1,21 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+- _target_: flowdec.callbacks.ema.EMA
+  decay: 0.999
+  apply_ema_every_n_steps: 1
+  start_step: 0
+  evaluate_with_ema_weights: True
+- _target_: flowdec.callbacks.ema.EMAModelCheckpoint
+  dirpath: ${dirs.checkpoint_dir}
+  save_last: False
+  filename: 'last-{epoch}-{step}'
+- _target_: flowdec.callbacks.ema.EMAModelCheckpoint
+  dirpath: ${dirs.checkpoint_dir}
+  save_last: False
+  filename: '{step}'
+  every_n_train_steps: 50000
+  save_top_k: -1  # keep all

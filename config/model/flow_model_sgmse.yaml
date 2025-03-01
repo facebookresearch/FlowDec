@@ -1,0 +1,22 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+defaults:
+  - all_model_defaults
+  - backbone: ncsnpp_default_ycond
+  - feature_extractor: compressed_complex_stft_sgmse1534
+  - _self_
+
+_target_: flowdec.model.FlowModel
+lr: 1e-4
+sigma_x: 0.0  # different from SGMSE, to avoid residual noise
+sigma_y: 0.5  # as in SGMSE
+flow_matcher:
+  _target_: torchcfm.ConditionalFlowMatcher
+  # `sigma` is the stdev on the conditional probability path p_t(.|x0,x1)
+  # It could be time-dependent more generally but is set to a constant here
+  #  NOTE: If you make it time-dependent you need to rederive some expressions, see Tong et al. 2024
+  sigma: 1e-2  # guessed default based on Appendix in Tong et al. 2024

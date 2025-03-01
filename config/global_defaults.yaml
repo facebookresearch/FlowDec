@@ -1,0 +1,52 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+defaults:
+  - logger: wandb
+  - optimizer: adam
+  - callbacks: ema_last_and_every_50k_steps
+  - _self_
+
+dirs:
+  logger_save_dir: /fsx-audiobox/welker/runs/flowdec/
+  checkpoint_dir: /fsx-checkpoints/welker/checkpoints/flowdec/
+
+# We define this here since it is effectively a property both of the model and
+# of the data module (and possibly other objects also care about it).
+#   We could also define it on the data module and interpolate that property into
+# the score model, but this way we decrease module-to-module config coupling, and
+# each module can verify independently whether the global shared sampling rate is
+# what it expects or not, and fail loudly rather than silently.
+sampling_rate: 48000
+
+datamodule:
+  batch_size: 8
+
+model:
+  evaluation_seed: 0  # fix random seed for eval
+
+trainer_options:
+  max_steps: 1000000
+  log_every_n_steps: 10
+  num_sanity_val_steps: 1
+  strategy: ddp
+  accelerator: gpu
+  devices: 1
+
+float32_matmul_precision: high
+
+# How often to run the 'full' (most expensive) evaluation
+full_eval_every_n_epochs: 10
+
+hydra:
+  job:
+    chdir: False  # avoids a console warning
+
+loglevel: info
+run_id: !!null
+slurm_job_id: !!null
+resume_from_checkpoint: !!null
+force_new_run: False

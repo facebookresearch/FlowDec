@@ -1,0 +1,19 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+
+defaults:
+  - global_defaults
+  - model: flow_model_final
+  - datamodule: example  # TODO override
+  - _self_
+
+model:
+  lr: 1e-4
+  feature_extractor:
+    alpha: 0.3
+    beta: 0.33  # roughly determined by estimate_flowdec_params.py
+  sigma_y: 0.66  # roughly determined by estimate_flowdec_params.py
+sampling_rate: 48000
