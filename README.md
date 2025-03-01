@@ -21,7 +21,7 @@ pip install -r requirements.txt --extra-index-url https://download.pytorch.org/w
 
 ## Checkpoints
 
-You can find the checkpoints for FlowDec-75m and FlowDec-75s, as well as the weights for the underlying NDAC codecs NDAC-75 and NDAC-25, [here](TODO).
+You can find the checkpoints for FlowDec-75m and FlowDec-75s, as well as the weights for the underlying NDAC codecs NDAC-75 and NDAC-25, [here](https://github.com/facebookresearch/FlowDec/releases/download/checkpoints/checkpoints.zip).
 
 ## Inference
 
