@@ -1,4 +1,10 @@
-# Copied and adapted from https://github.com/BioinfoMachineLearning/bio-diffusion/blob/e4bad15139815e562a27fb94dab0c31907522bc5/src/utils/__init__.py
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+#
+# The code is copied and adapted from https://github.com/BioinfoMachineLearning/bio-diffusion/blob/e4bad15139815e562a27fb94dab0c31907522bc5/src/utils/__init__.py
 # Original code is under a MIT license: https://github.com/BioinfoMachineLearning/bio-diffusion/blob/1cfc969193ee9f32d5300c63726b33a2a3b071d9/LICENSE
 
 import torch

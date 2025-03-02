@@ -1,3 +1,14 @@
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+#
+# We copied the code from
+# https://github.com/microsoft/SIG-Challenge/tree/main/ICASSP2024/sigmos
+# The original licensed is listed in
+# https://github.com/microsoft/SIG-Challenge/blob/a6796d87c5962bc39463137b61163669f80fb898/LICENSE
+
 import os
 import scipy
 import librosa
