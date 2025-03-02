@@ -1,4 +1,14 @@
 # coding=utf-8
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+#
+# We copied the code from
+# https://github.com/yang-song/score_sde_pytorch/tree/main
+# The original copyright is as follows
+#
 # Copyright 2020 The Google Research Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");

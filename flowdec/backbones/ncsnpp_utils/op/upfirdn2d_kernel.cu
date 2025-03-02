@@ -1,8 +1,19 @@
-// Copyright (c) 2019, NVIDIA Corporation. All rights reserved.
-//
-// This work is made available under the Nvidia Source Code License-NC.
-// To view a copy of this license, visit
-// https://nvlabs.github.io/stylegan2/license.html
+/* 
+# Copyright (c) Meta Platforms, Inc. and affiliates.
+# All rights reserved.
+#
+# This source code is licensed under the license found in the
+# LICENSE file in the root directory of this source tree.
+#
+# We copied the code from
+# https://github.com/yang-song/score_sde_pytorch/tree/main
+# The original copyright is as follows
+# Copyright (c) 2019, NVIDIA Corporation. All rights reserved.
+#
+# This work is made available under the Nvidia Source Code License-NC.
+# To view a copy of this license, visit
+# https://nvlabs.github.io/stylegan2/license.html
+*/
 
 #include <torch/types.h>
 
