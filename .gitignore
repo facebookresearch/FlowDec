@@ -198,6 +198,6 @@ outputs
 /wandb
 hpc_ckpt_1.ckpt
 /multirun
-/*.ipynb
+#/*.ipynb
 /figs/
 /src
