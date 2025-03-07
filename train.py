@@ -249,7 +249,7 @@ def instantiate_callbacks(cfg: omegaconf.DictConfig, run_id: str):
         - run_id: The unique ID of this training run (usually auto-determined by W&B)
     """
     callbacks = instantiate(cfg.callbacks)
-    # We programatically update any ModelCheckpoint dirpaths depending on the run ID,
+    # We programmatically update any ModelCheckpoint dirpaths depending on the run ID,
     # so that we save checkpoints to a neat unique subdirectory.
     # TODO is there a better way?
     for callback in callbacks:
