@@ -33,7 +33,7 @@ pyarrow==16.1.0
 pyroomacoustics==0.7.4
 git+https://github.com/cobalamin/pysepm.git@defc47219af705a7052d382717f9b34072e8fcc4#egg=pysepm
 pystoi==0.4.1
-pytorch-lightning==2.2.5
+pytorch-lightning
 schedulefree==1.2.7
 scikit-learn==1.5.0
 scipy==1.12.0
@@ -43,10 +43,10 @@ sox==1.5.0
 speechmos==0.0.1.1
 tensorboard==2.16.2
 tinydb==4.8.0
-torch==2.3.0
+torch
 # torch-pesq -- we use this fork since it removes some outdated type annotations that error out
 git+https://github.com/cobalamin/torch-pesq.git@6f7a2889d08ed4f4b56e0a94532631323a2bb86a#egg=torch-pesq
-torchaudio==2.3.0
+torchaudio
 torchcde==0.2.5
 git+https://github.com/atong01/conditional-flow-matching.git@ec4da0846ddaf77e8406ad2fd592a6f0404ce5ae#egg=torchcfm
 torchdiffeq==0.2.3
