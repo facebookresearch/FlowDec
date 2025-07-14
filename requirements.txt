@@ -1,4 +1,4 @@
-aiohttp==3.10.11
+aiohttp>=3.12.14
 cqt-nsgt-pytorch==0.0.10
 cqt-pytorch==0.0.5
 descript-audio-codec==1.0.0
