@@ -14,7 +14,7 @@ ipywidgets==8.1.2
 isoduration==20.11.0
 jsonpointer==2.4
 jupyter==1.0.0
-jupyterlab==4.2.5
+jupyterlab==4.5.7
 librosa==0.10.2.post1
 lightning==2.3.3
 lightning-utilities==0.11.2
