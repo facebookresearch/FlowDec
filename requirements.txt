@@ -29,7 +29,7 @@ paramiko==3.4.0
 pesq==0.0.4
 pip-chill==1.0.3
 positional-encodings==6.0.3
-pyarrow==16.1.0
+pyarrow==23.0.1
 pyroomacoustics==0.7.4
 git+https://github.com/cobalamin/pysepm.git@defc47219af705a7052d382717f9b34072e8fcc4#egg=pysepm
 pystoi==0.4.1
